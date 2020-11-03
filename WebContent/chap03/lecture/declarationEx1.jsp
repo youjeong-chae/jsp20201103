@@ -1,5 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%! 
+int i = 3;
+static int j = 10;
+%>   
+    
+<%!
+int k = 20;
+%>    
+    
+<%!
+void mymethod() {
+	System.out.println("hello");
+}
+
+static void mymethod2() {
+	System.out.println("hello static");
+}
+%>    
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,70 +32,10 @@
 </head>
 <body>
 
-<%
-for (int i = 0; i < 5; i++) {
-%>
-	<h1>Lorem ipsum dolor.</h1>
-	
-<%
-}
-%>
 
-<%
-java.util.List<String> list = new java.util.ArrayList<>();
-list.add("java");
-list.add("jsp");
-list.add("spring");
-list.add("dbms");
-%>
+<h1>Lorem ipsum dolor.</h1>
 
-<ul>
-<%
-for (String item : list) {
-%>
-<li>
-<% out.print(item); %>
-</li>
-<%
-}
-%>
-
-</ul>
-
-<%
-boolean danger = false;
-%>
-<%
-if(danger) {
-%>
-<h1 calss="text-danger">DANGER!!!!</h1>
-<%
-} else {
-%>
-<h1 class="text-info">INFO~~~</h1>
-<%
-}
-%>
-<hr />
-*
-**
-***
-****
-*****
-
-<hr />
-<%
-for (int i = 0; i < 5; i++) {
-  for (int j = 0; j <= i; j++) {
-%>
-    *
-<%
-  }
-%>
-    <br>
-<%
-}
-%>
-
+<% this.mymethod(); %>
+<% mymethod2(); %>
 </body>
 </html>
