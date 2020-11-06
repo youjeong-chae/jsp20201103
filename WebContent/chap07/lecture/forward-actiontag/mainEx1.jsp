@@ -13,15 +13,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1>main jsp</h1>
 
-<%@ include file="/WEB-INF/chap07/include-directive/navbarEx1.jsp" %>
+<jsp:forward page="subEx1.jsp"></jsp:forward>
 
-
-<div class="container">
-  <h1>cool page~!!!!!!</h1>
-  <h2><%= name %></h2>
-</div>
-
-<%@ include file="/WEB-INF/chap07/include-directive/footerEx1.jsp" %>
+<h1>main footer</h1>
 </body>
 </html>
