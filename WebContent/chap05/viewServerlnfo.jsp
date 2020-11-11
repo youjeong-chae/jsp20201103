@@ -10,18 +10,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<title>폼 생성</title>
+<title>Insert title here</title>
 </head>
 <body>
-<form action="<%= request.getContextPath() %>/chap03/viewParameter.jsp" method="post">
-이름 : <input type="text" name="name" size="10"/> <br />
-주소 : <input type="text" name="address" size="30"/> <br />
-좋아하는 동물 :
-	<input type="checkbox" name="pet" value="dog"/>강아지
-	<input type="checkbox" name="pet" value="cat"/>고양이
-	<input type="checkbox" name="pet" value="pig"/>돼지
-<br />
-<input type="submit" value="전송"/>
-</form>
+서버정보: <%= application.getServerInfo() %> <br />
+서블릿 규약 메이저 버전: <%= application.getMajorVersion() %> <br />
+서블릿 규약 마이너 머전: <%= application.getMinorVersion() %>
 </body>
 </html>

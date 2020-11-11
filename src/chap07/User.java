@@ -5,6 +5,12 @@ public class User {
 	private String address;
 	private int age;
 	
+	public User(String name, String address, int age) {
+		super();
+		this.name = name;
+		this.address = address;
+		this.age = age;
+	}
 	public String getName() {
 		return name;
 	}

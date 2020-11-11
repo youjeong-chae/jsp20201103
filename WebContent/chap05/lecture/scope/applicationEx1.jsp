@@ -10,18 +10,21 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<title>폼 생성</title>
+<title>Insert title here</title>
 </head>
 <body>
-<form action="<%= request.getContextPath() %>/chap03/viewParameter.jsp" method="post">
-이름 : <input type="text" name="name" size="10"/> <br />
-주소 : <input type="text" name="address" size="30"/> <br />
-좋아하는 동물 :
-	<input type="checkbox" name="pet" value="dog"/>강아지
-	<input type="checkbox" name="pet" value="cat"/>고양이
-	<input type="checkbox" name="pet" value="pig"/>돼지
-<br />
-<input type="submit" value="전송"/>
-</form>
+<h1>java 웹 앱의 4개의 영역</h1>
+<ul>
+<li>page - pageContext 객체</li>
+<li>request - request 객체</li>
+<li>session - session 객체</li>
+<li>application - application 객체</li>
+</ul>
+
+<%
+request.setAttribute("reqAttr1", "reqVal1");
+session.setAttribute("sessionAttr1", "sessionVal1");
+application.setAttribute("appAttr1", "appVal1");
+%>
 </body>
 </html>

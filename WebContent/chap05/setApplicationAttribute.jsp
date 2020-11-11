@@ -2,6 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
+<%
+  String name = request.getParameter("name");
+  String value = request.getParameter("value");
+  
+  if (name != null && value != null) {
+    application.setAttribute(name, value); 
+  }
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,18 +19,20 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<title>폼 생성</title>
+<title>Insert title here</title>
 </head>
 <body>
-<form action="<%= request.getContextPath() %>/chap03/viewParameter.jsp" method="post">
-이름 : <input type="text" name="name" size="10"/> <br />
-주소 : <input type="text" name="address" size="30"/> <br />
-좋아하는 동물 :
-	<input type="checkbox" name="pet" value="dog"/>강아지
-	<input type="checkbox" name="pet" value="cat"/>고양이
-	<input type="checkbox" name="pet" value="pig"/>돼지
-<br />
-<input type="submit" value="전송"/>
-</form>
+<%
+  if (name != null && value != null) {
+%>
+application 기본 객체의 속성 설정:
+<%= name %> = <%= value %>
+<%
+  } else {
+%>
+application 기본 객체의 속성 설정 안함
+<%
+  }
+%>
 </body>
 </html>

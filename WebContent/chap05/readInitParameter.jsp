@@ -13,6 +13,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-3장의 인덱스 페이지
+
+초기화 파라미터 목록:
+<ul>
+<%
+Enumeration<String> initParamEnum = application.getInitParameterNames();
+while (initParamEnum.hasMoreElements()) {
+  String initParamName = initParamEnum.nextElement(); 
+%>
+<li><%= initParamName %>= <%=application.getInitParameter(initParamName) %></li>
+<%
+}
+%>
+
+
+</ul>
+
 </body>
 </html>
