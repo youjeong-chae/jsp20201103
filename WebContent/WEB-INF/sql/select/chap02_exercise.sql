@@ -74,6 +74,14 @@ SELECT * FROM employee WHERE commission=null;
 SELECT * FROM employee WHERE commission IS null;
 SELECT * FROM employee WHERE commission IS NOT null;
 
--- 105
-SELECT length('OracleMania'), length('오라클매니아') from dual;
-SELECT lengthb('OracleMania'), lengthb('오라클매니아') from dual;
+SELECT * FROM employee ORDER BY salary ASC;
+SELECT * FROM employee ORDER BY salary;
+SELECT * FROM employee ORDER BY salary DESC;
+
+SELECT * FROM employee ORDER BY ename;
+SELECT * FROM employee ORDER BY ename DESC;
+
+SELECT * FROM employee ORDER BY hiredate;
+SELECT * FROM employee ORDER BY hiredate DESC;
+
+SELECT * FROM employee ORDER BY salary DESC, ename ASC;
