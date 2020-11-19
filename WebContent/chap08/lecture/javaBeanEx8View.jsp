@@ -27,4 +27,5 @@
 <jsp:getProperty property="name" name="car"/> <br />
 <jsp:getProperty property="speed" name="car"/> <br />
 </body>
+
 </html>
