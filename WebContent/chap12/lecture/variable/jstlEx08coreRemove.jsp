@@ -15,7 +15,7 @@
 </head>
 <body>
 <c:set var="myVar1" value="my value1" />
-<c:set var="myVar2" value="my value2, requst" scope="request" />
+<c:set var="myVar2" value="my value2, request" scope="request" />
 <c:set var="myVar1" value="my value1, request" scope="request" />
 ${myVar1 } <br />
 ${requestScope.myVar1 } <br />

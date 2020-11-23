@@ -14,17 +14,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${not empty param.dark or dark  }" var="dark" scope="session">
+<c:if test="${not empty param.dark }" var="dark" scope="session"> <%-- 검정색 --%>
    <div style="background-color: black; color:white;">
    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse beatae molestiae tenetur aliquam totam facere necessitatibus rerum iure eum architecto consectetur dolor provident velit magnam iste quaerat adipisci maiores delectus.
    </div>
 </c:if>
 
-<c:if test="${not dark}">
-   <div style="background-color: black; color:white;">
+<c:if test="${not dark}"> <%-- !dark 와 동일 --%>
+   <div style="background-color: white; color:black;"> <%-- 검정색 아닐 경우 --%>
    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse beatae molestiae tenetur aliquam totam facere necessitatibus rerum iure eum architecto consectetur dolor provident velit magnam iste quaerat adipisci maiores delectus. 
    </div>
 </c:if>
+<!-- jsp empty null값의 유무 판단 -->
 </body>
 </html>
 
