@@ -2,14 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
-
-<%
-  String id = request.getParameter("memberId");
-  if (id != null && id.equals("madvirus")) {
-    //response.sendRedirect("index.jsp");
-    response.sendRedirect(request.getContextPath() + "/chap03/index.jsp"); 
-  } else {
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,12 +10,21 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<title>로그인에 실패</title>
+<title>Insert title here</title>
 </head>
 <body>
-잘못된 아이디입니다.
+
+
+${Math.abs(-5) } <br />
+${Math.random() } <br />
+${Math.round(3.14) } <br />
+
+<hr />
+<%
+double num = 5.5;
+pageContext.setAttribute("num2", num);
+%>
+${Math.round(num2) } <br />
+
 </body>
 </html>
-<%
-  }
-%>
