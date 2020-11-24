@@ -14,12 +14,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- 
-<c:set />
-<c:remove />
-<c:if />
-<c:forEach /> 
---%>
 
 </body>
 </html>

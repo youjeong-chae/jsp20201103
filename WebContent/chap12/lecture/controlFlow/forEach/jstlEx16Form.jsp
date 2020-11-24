@@ -14,12 +14,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- 
-<c:set />
-<c:remove />
-<c:if />
-<c:forEach /> 
---%>
-
+<h1>구구단 보기</h1>
+<form action="jstlEx16View.jsp">
+  <input type="number" name="dan" /> 
+  <input type="submit" value="단 보기" />
+</form>
 </body>
 </html>

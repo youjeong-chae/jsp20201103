@@ -14,12 +14,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- 
-<c:set />
-<c:remove />
-<c:if />
-<c:forEach /> 
---%>
-
+<ul>
+  <c:forEach var="item" items="${paramValues.food }">
+    <li>${item }</li>  
+  </c:forEach>
+</ul>
 </body>
 </html>

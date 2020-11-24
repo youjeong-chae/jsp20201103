@@ -14,12 +14,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- 
-<c:set />
-<c:remove />
-<c:if />
-<c:forEach /> 
---%>
+<% 
+Map<String, String> map = new HashMap<>();
+map.put("key1", "value1");
+map.put("key2", "value2");
+map.put("key3", "value3");
+map.put("key4", "value4");
+map.put("key5", "value5");
+
+pageContext.setAttribute("myMap", map);
+%>
+<c:forEach items="${myMap }" var="myEntry">
+ <li>${myEntry.key } : ${myEntry.value} </li>
+</c:forEach>
 
 </body>
 </html>

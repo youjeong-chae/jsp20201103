@@ -14,12 +14,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- 
-<c:set />
-<c:remove />
-<c:if />
-<c:forEach /> 
---%>
-
+<c:choose>
+ <c:when test="true">
+   <h1>hello 1</h1>
+ </c:when>
+ <c:when test="false">
+   <h1>hello 2</h1>
+ </c:when>
+ <c:otherwise>
+  <h1>hello 3</h1>
+ </c:otherwise>
+</c:choose>
 </body>
 </html>

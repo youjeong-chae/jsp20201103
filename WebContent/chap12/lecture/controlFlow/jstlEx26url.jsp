@@ -14,12 +14,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- 
-<c:set />
-<c:remove />
-<c:if />
-<c:forEach /> 
---%>
+<c:url value="jstlEx01.jsp" var="myUrl" scope="request"/>
+ <c:param name="id" value="3" />
+ <c:param name="name" value="jo"
 
+<a href="${myUrl }">예제 01</a>
 </body>
 </html>

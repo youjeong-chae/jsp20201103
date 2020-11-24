@@ -14,12 +14,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- 
-<c:set />
-<c:remove />
-<c:if />
-<c:forEach /> 
---%>
-
+<%
+List<String> list = new ArrayList<>();
+list.add("java");
+list.add("html");
+list.add("servlet");
+list.add("css");
+list.add("jquery");
+list.add("js");
+request.setAttribute("myList", list);
+%>
+<ul>
+  <c:forEach items="${myList }" var="elem" varStatus="stat" begin="2" end="4">
+    <li>${stat.count } : ${stat.index} : ${elem }</li>
+  </c:forEach>
+</ul>
 </body>
 </html>

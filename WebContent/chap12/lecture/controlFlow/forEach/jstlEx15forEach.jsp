@@ -14,12 +14,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- 
-<c:set />
-<c:remove />
-<c:if />
-<c:forEach /> 
---%>
-
+<c:forEach var="i" begin="9" end="11">
+  <h1>반복 ${i}</h1>
+</c:forEach>
 </body>
 </html>

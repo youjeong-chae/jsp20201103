@@ -14,12 +14,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- 
-<c:set />
-<c:remove />
-<c:if />
-<c:forEach /> 
---%>
-
+<c:forEach var="i" begin="2" end="9">
+  <h3>${i } 단</h3>
+  <c:forEach var="j" begin="1" end="9" step="2">
+    ${i } &times; ${j } &equals; ${i * j } <br />
+  </c:forEach>
+  <hr />
+</c:forEach>
 </body>
 </html>

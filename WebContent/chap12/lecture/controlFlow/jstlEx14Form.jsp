@@ -14,12 +14,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- 
-<c:set />
-<c:remove />
-<c:if />
-<c:forEach /> 
---%>
-
+<h1>choose when otherwise 연습</h1>
+<form action="jstlEx14View.jsp">
+  이름 : <input type="text" name="name" /> <br />
+  나이 : <input type="number" name="age" /> <br />
+  <input type="submit" value="등록"/>
+</form>
 </body>
 </html>
+
