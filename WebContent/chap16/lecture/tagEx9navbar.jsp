@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags/lecture" %>
 <% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
@@ -13,13 +15,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>path</h1>
-<a href="<%= request.getContextPath() %>/chap04/lecture/contextPathEx2.jsp">other file</a>
-<br />
-<a href="contextPathEx2.jsp">other file 2</a>
-<br />
-<a href="<%= request.getContextPath() %>/chap04/lecture/subfolder/pathEx1Sub.jsp">절대 경로</a>
-<br />
-<a href="subfolder/pathEx1Sub.jsp">상대 경로</a>
+<%
+List<String> list = new ArrayList<>();
+list.add("Home");
+list.add("About");
+list.add("Store");
+list.add("Link");
+
+request.setAttribute("menus", list);
+%>
+
+<my:ex9navbar form="true"></my:ex9navbar>
 </body>
 </html>
