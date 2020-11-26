@@ -12,7 +12,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<title>Insert title here</title>
+<title>application 기본 객체 사용하여 자원 읽기</title>
 </head>
 <body>
 <%
@@ -20,6 +20,10 @@ String resourcePath="/WEB-INF/notice.txt";
 %>
 자원의 실제 경로 : <br />
 <%= application.getRealPath(resourcePath) %>
+<%
+//String realPath = application.getRealPath(resourcePath);
+//InputStream st = new InputStream(realPath);
+%>
 <br />
 --------------- <br />
 <%= resourcePath %>의 내용 <br />
@@ -31,7 +35,7 @@ try (InputStreamReader br = new InputStreamReader(
       application.getResourceAsStream(resourcePath), "UTF-8"
     )) {
   while ((len = br.read(buff)) != -1) {
-  	out.print(new String(buff, 0, len));
+    out.print(new String(buff, 0, len));
   }
 } catch (IOException e) {
   out.println("익셉션 발생: " + e.getMessage()); 
