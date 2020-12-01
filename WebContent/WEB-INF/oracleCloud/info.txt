@@ -1,0 +1,40 @@
+sql developer web url
+https://u9aa7lbd1byf6to-mydb501.adb.ap-seoul-1.oraclecloudapps.com/ords/mydb27/_sdw/?nav=worksheet
+
+pw
+adminAdmin27
+
+sample tables
+https://git.io/JkhFi
+
+users
+mydb01	김여림
+mydb02	김연경
+mydb03	김연주
+mydb04	김영한
+mydb05	김용준
+mydb06	김은지
+mydb07	김현호
+mydb08	김효진
+mydb09	문진수
+mydb10	민혜인
+mydb11	박재민
+mydb12	박철수
+mydb13	신승민
+mydb14	오기병
+mydb15	유보미
+mydb16	유시원
+mydb17	유채형
+mydb18	이다윤
+mydb19	이원석
+mydb20	이지용
+mydb21	이진형
+mydb22	장민주
+mydb23	장유라
+mydb24	정수현
+mydb25	정태영
+mydb26	조혜리
+mydb27	채유정
+mydb28	최윤관
+mydb29	한건희
+mydb30	함동주
