@@ -14,11 +14,11 @@
 </head>
 <body>
 <h1>path</h1>
-<a href="<%= request.getContextPath() %>/chpa04/lecture/contextPath2.jsp">other file</a>
+<a href="<%= request.getContextPath() %>/chap04/lecture/contextPathEx2.jsp">other file</a>
 <br />
-<a href="contextPath2.jsp">other file 2</a>
+<a href="contextPathEx2.jsp">other file 2</a>
 <br />
-<a href="<%= request.getContextPath() %>/chpa04/lecture/subfolder/pathEx1Sub.jsp">절대 경로</a>
+<a href="<%= request.getContextPath() %>/chap04/lecture/subfolder/pathEx1Sub.jsp">절대 경로</a>
 <br />
 <a href="subfolder/pathEx1Sub.jsp">상대 경로</a>
 </body>
