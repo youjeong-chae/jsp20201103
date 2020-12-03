@@ -1,24 +1,125 @@
--- 195P í˜¼ìží•´ë³´ê¸°
--- 01
+-- 195P È¥ÀÚÇØº¸±â
+-- 01 »ç¿ø¹øÈ£°¡ 7788ÀÎ »ç¿ø Ç¥½ÃÇÏ±â
 SELECT ename, JOB
 FROM employee
 WHERE JOB = (SELECT JOB 
              FROM employee 
              WHERE eno = 7788);
              
--- 02
+-- 02 »ç¿ø¹øÈ£°¡ 7499ÀÎ »ç¿øº¸´Ù ±Þ¿©°¡ ¸¹Àº »ç¿ø Ç¥½ÃÇÏ±â
 SELECT ename, JOB
 FROM employee 
 WHERE salary > ANY (SELECT salary 
                    FROM employee
                    WHERE eno = 7499);
                    
--- 03
+-- 03 ÃÖ¼Ò ±Þ¿©¸¦ ¹Þ´Â »ç¿ø Ç¥½ÃÇÏ±â
 SELECT ename, JOB, salary
 FROM employee
 WHERE salary = (SELECT 
                 MIN(salary)
                 FROM employee);
                 
--- 04
+-- 04 Æò±Õ ±Þ¿©°¡ °¡Àå ÀûÀº »ç¿øÀÇ ´ã´ç ¾÷¹«¸¦ Ã£¾Æ Á÷±Þ°ú Æò±Õ ±Þ¿© Ç¥½ÃÇÏ±â
+SELECT JOB, round(AVG(salary), 1) 
+FROM employee
+GROUP BY JOB
+HAVING round(AVG(salary), 1) = (SELECT MIN(round(AVG(salary), 1))
+                                FROM employee
+                                GROUP BY JOB);
+
+-- 05 °¢ ºÎ¼­ÀÇ ÃÖ¼Ò ±Þ¿©¸¦ ¹Þ´Â »ç¿ø Ç¥½ÃÇÏ±â 
+SELECT ename, salary, dno 
+FROM employee 
+WHERE salary IN (SELECT MIN(salary)
+                FROM employee 
+                GROUP BY dno);
+                
+-- 06 ´ã´ç ¾÷¹«°¡ ANALYSTÀÎ »ç¿øº¸´Ù ±Þ¿©°¡ ÀûÀº »ç¿ø Ç¥½ÃÇÏ±â
+SELECT eno, ename, JOB, salary 
+FROM employee
+WHERE salary < ANY (SELECT salary
+                FROM employee
+                WHERE JOB = 'ANALYST')
+AND JOB <> 'ANALYST';
+
+-- 07 ºÎÇÏÁ÷¿øÀÌ ¾ø´Â »ç¿ø Ç¥½ÃÇÏ±â
+SELECT ename 
+FROM employee 
+WHERE eno IN (SELECT eno
+            FROM employee
+            WHERE MANAGER IS NULL);
+            
+-- 08 ºÎÇÏÁ÷¿øÀÌ ÀÖ´Â »ç¿ø Ç¥½ÃÇÏ±â
+SELECT ename 
+FROM employee 
+WHERE eno IN (SELECT eno
+            FROM employee
+            WHERE MANAGER IS NOT NULL);
+            
+-- 09 BLAKE¿Í µ¿ÀÏÇÑ ºÎ¼­¿¡ ¼ÓÇÑ »ç¿ø Ç¥½ÃÇÏ±â
+SELECT ename, hiredate 
+FROM employee 
+WHERE dno = (SELECT dno
+            FROM employee
+            WHERE ename = 'BLAKE')
+AND ename <> 'BLAKE';
+
+-- 10 ±Þ¿©°¡ Æò±Õ ±Þ¿©º¸´Ù ¸¹Àº »ç¿ø Ç¥½ÃÇÏ±â
+SELECT eno, ename
+FROM employee
+WHERE salary > (SELECT AVG(salary)
+                    FROM employee)
+                    ORDER BY salary ASC; 
+
+-- 11 ÀÌ¸§¿¡ K°¡ Æ÷ÇÔµÈ »ç¿ø°ú °°Àº ºÎ¼­¿¡¼­ ±Ù¹«ÇÏ´Â »ç¿ø Ç¥½ÃÇÏ±â
+SELECT eno, ename
+FROM employee
+WHERE dno IN (SELECT dno
+            FROM employee
+            WHERE ename LIKE '%K%');
+
+-- 12 DALLAS¿¡¼­ ±Ù¹«ÇÏ´Â »ç¿ø Ç¥½ÃÇÏ±â
+SELECT ename, dno, JOB 
+FROM employee
+WHERE dno = (SELECT dno
+             FROM department
+             WHERE loc='DALLAS');
+
+-- 13 KING¿¡°Ô º¸°íÇÏ´Â ¸ðµç »ç¿øÀÇ ÀÌ¸§°ú ±Þ¿©¸¦ Ç¥½ÃÇÏ±â
+SELECT ename, salary
+FROM employee
+WHERE MANAGER = (SELECT eno 
+                 FROM employee
+                 WHERE ename = 'KING');
+
+-- 14 RESEARCH¿¡¼­ ±Ù¹«ÇÏ´Â »ç¿ø Ç¥½ÃÇÏ±â
+select eno, ename, job
+from employee
+where dno = (select dno
+             from department
+             where dname = 'RESEARCH');
+             
+-- 15 Æò±Õ ±Þ¿©º¸´Ù ¸¹Àº ±Þ¿©¸¦ ¹Þ°í ÀÌ¸§¿¡ MÀÌ Æ÷ÇÔµÈ »ç¿ø°ú °°Àº ºÎ¼­¿¡¼­ ±Ù¹«ÇÏ´Â »ç¿ø Ç¥½ÃÇÏ±â
+select eno, ename, salary
+from employee
+where salary > (select avg(salary)
+                from employee)
+and dno in(select dno 
+           from employee
+           where ename like '%M%');
+                
+-- 16 Æò±Õ ±Þ¿©°¡ °¡Àå ÀûÀº ¾÷¹« Ç¥½ÃÇÏ±â
+SELECT JOB, AVG(salary)
+FROM employee
+GROUP BY JOB 
+HAVING AVG(salary) = (SELECT  MIN(AVG(salary))
+                      FROM employee
+                      GROUP BY JOB);
+
+-- 17 ´ã´ç ¾÷¹«°¡ MANAGERÀÎ »ç¿øÀÌ ¼Ò¼ÓµÈ ºÎ¼­¿Í µ¿ÀÏÇÑ ºÎ¼­ÀÇ »ç¿ø Ç¥½ÃÇÏ±â
+select ename
+from employee
+where eno in (select MANAGER
+               from employee);
 
