@@ -22,6 +22,7 @@
   이름 : <input type="text" name="ename" />
   <br />
   부서 : <select name="dno" id="">
+<<<<<<< HEAD
     <option value="10">ACCOUNTING</option>
     <option value="20">RESEARCH</option>
     <option value="30">SALES</option>
@@ -32,3 +33,15 @@
 </form>
 </body>
 </html>
+=======
+  	<option value="10">ACCOUNTING</option>
+  	<option value="20">RESEARCH</option>
+  	<option value="30">SALES</option>
+  	<option value="40">OPERATIONS</option>
+  </select>
+  <br />
+  <input type="submit" value="등록" />
+</form>
+</body>
+</html>
+>>>>>>> branch 'master' of https://github.com/youjeong-chae/jsp20201103.git
