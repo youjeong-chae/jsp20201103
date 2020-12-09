@@ -1,38 +1,38 @@
--- table ë§Œë“¤ê¸°
+-- table ¸¸µé±â
 -- CREATE TABLE
 
 CREATE TABLE table1 (
- col1 NUMBER(3, 1), -- ìˆ˜ 3ì˜ ê¸¸ì´ê³  ì†Œìˆ˜ë°‘ 1
- col2 VARCHAR2(6),  -- ê°€ë³€ê¸¸ì´ ë¬¸ìžì—´ 6bytesê¹Œì§€
- col3 CHAR(4),      -- ê³ ì •ê¸¸ì´ ë¬¸ìžì—´ 4bytes
- col4 DATE          -- ë‚ ì§œì‹œê°„
+ col1 NUMBER(3, 1), -- ¼ö 3ÀÇ ±æÀÌ°í ¼Ò¼ö¹Ø 1
+ col2 VARCHAR2(6),  -- °¡º¯±æÀÌ ¹®ÀÚ¿­ 6bytes±îÁö
+ col3 CHAR(4),      -- °íÁ¤±æÀÌ ¹®ÀÚ¿­ 4bytes
+ col4 DATE          -- ³¯Â¥½Ã°£
 );
 SELECT * FROM table1;
 DESC table1;
 SELECT * FROM department;
 
--- DATA TYPE (ì±… 17ìª½)
--- ìˆ˜, ë¬¸ìžì—´, ë‚ ì§œì‹œê°„
--- ìˆ˜
+-- DATA TYPE (Ã¥ 17ÂÊ)
+-- ¼ö, ¹®ÀÚ¿­, ³¯Â¥½Ã°£
+-- ¼ö
 -- NUMBER
--- NUMBER(ê°’)
---   ex)ê°’ì´ 3ì´ë©´ 1000ì´ìƒ í‘œì‹œ ëª»í•¨
--- NUMBER(ê°’1, ê°’2)
---   ex)ê°’1ì€ ì´ê¸¸ì´, ê°’2ëŠ” ì†Œìˆ˜ì ë°‘ì˜ ê¸¸ì´
---      NUMBER(3, 2) : 10ì´ìƒ í‘œì‹œ ëª»í•¨
+-- NUMBER(°ª)
+--   ex)°ªÀÌ 3ÀÌ¸é 1000ÀÌ»ó Ç¥½Ã ¸øÇÔ
+-- NUMBER(°ª1, °ª2)
+--   ex)°ª1Àº ÃÑ±æÀÌ, °ª2´Â ¼Ò¼öÁ¡¹ØÀÇ ±æÀÌ
+--      NUMBER(3, 2) : 10ÀÌ»ó Ç¥½Ã ¸øÇÔ
 
--- ë¬¸ìžì—´ 
--- VARCHAR2(ê°’) : ê°€ë³€ ê¸¸ì´
--- ê°’: byteìˆ˜ 
--- CHAR(ê°’) : ê³ ì • ê¸¸ì´
--- ê°’: byteìˆ˜
+-- ¹®ÀÚ¿­
+-- VARCHAR2(°ª) : °¡º¯ ±æÀÌ
+-- °ª: byte¼ö
+-- CHAR(°ª) : °íÁ¤ ±æÀÌ
+-- °ª: byte¼ö
 
 
--- ë‚ ì§œì‹œê°„
+-- ³¯Â¥½Ã°£
 -- DATE
 
 
--- ì±… ì˜ˆì œ (207ìª½)
+-- Ã¥ ¿¹Á¦ (207ÂÊ)
 CREATE TABLE dept (
     dno NUMBER(2),
     dname VARCHAR2(14),
@@ -41,15 +41,15 @@ CREATE TABLE dept (
 SELECT * FROM dept;
 DESC dept;
 
--- ì´ë¯¸ ìžˆëŠ” í…Œì´ë¸” ë³µì‚¬
--- 1. ê°™ì€ êµ¬ì¡°ì˜ table ë§Œë“¤ê³ 
--- 2. ì˜›tableì„ select -> ì‹ table insert
+-- ÀÌ¹Ì ÀÖ´Â Å×ÀÌºí º¹»ç
+-- 1. °°Àº ±¸Á¶ÀÇ table ¸¸µé°í
+-- 2. ¿¾tableÀ» select -> ½Åtable insert
 
 CREATE TABLE new_table
 AS
 SELECT * FROM old_table;
 
--- ì±… ì˜ˆì œ (207ìª½)
+-- Ã¥ ¿¹Á¦ (207ÂÊ)
 CREATE TABLE dept_second
 AS
 SELECT * FROM department;
@@ -57,7 +57,7 @@ DESC dept_second;
 DESC department;
 SELECT * FROM dept_second;
 
--- ì±… ì˜ˆì œ (208ìª½)
+-- Ã¥ ¿¹Á¦ (208ÂÊ)
 CREATE TABLE dept20
 AS
 SELECT eno, ename, salary*12 annsal
@@ -66,7 +66,7 @@ WHERE dno=20;
 DESC dept20;
 DESC employee;
 
--- ì±… ì˜ˆì œ (209ìª½)
+-- Ã¥ ¿¹Á¦ (209ÂÊ)
 CREATE TABLE dept_forth
 AS
 SELECT dno, dname
